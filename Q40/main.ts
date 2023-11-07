@@ -9,3 +9,22 @@
            */
 
 
+               function create_car(company: string, model: string, ...options: any[]) {
+                let car: any = {
+                  manufacturer: company,
+                  model: model
+                };
+              
+                for (let option of options) {
+                  let key = Object.keys(option)[0];
+                  let value = option[key];
+                  car[key] = value;
+                }
+              
+                return car;
+              }
+              
+              let newcar = create_car("Honda", "2023", { color: "Silver" }, { features: "navigation system" });
+              console.log(newcar);
+              
+           
